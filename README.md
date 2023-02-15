@@ -2,18 +2,18 @@
 
 ---
 
-## Built With React + Axios
+## Built With React + Axios + Syled Components
 
 ---
 
 ### Showcases Understanding Of:
 
-` `
+` Styled Components library `
 
-` `
+` Routing, Links `
 
-` `
+` Emmet notation `
 
-` `
+` Wrapping svg, png, icons, ect with button and styling to cursor `
 
 ` `
