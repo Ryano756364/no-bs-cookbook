@@ -1,3 +1,4 @@
+/* Global Styling */
 html {
   background-color: #eee;
   font-size: 62.5%;  /* 10px setup strategy for global font*/
@@ -8,3 +9,5 @@ html {
   padding: 0;
   margin: 0;
 }
+
+/* End Global Styling */
