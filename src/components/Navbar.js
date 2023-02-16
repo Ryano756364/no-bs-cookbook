@@ -4,10 +4,12 @@ import {FaBars} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
 import FavoriteButtons from './FavoriteButtons';
-//Import useProductsContext
+import { useRecipesContext } from '../context/recipes_context';
 //Import useUserContext
 
 function Navbar() {
+  const {openSidebar} = useRecipesContext(); //need to invoke here
+
   return (
     <NavContainer>
       <div className="nav-center">
@@ -16,7 +18,7 @@ function Navbar() {
             <img src={logo} alt="No BS Cookbook brand logo" />
           </Link>
 
-          <button type="button" className='nav-toggle'>
+          <button type="button" className='nav-toggle' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>

@@ -10,18 +10,15 @@ import { useRecipesContext } from '../context/recipes_context';
 //import { useUserContext } from '../context/user_context';
 
 function Sidebar() {
-  //Testing, delete before deploy
-  const data = useRecipesContext();
-  console.log(data);
+  const {isSidebarOpen, closeSidebar} = useRecipesContext(); //From the state
 
-  let isOpen = false;
-
+  //setting up clicking with sidebar
   return (
     <SidebarContainer>
-      <aside className={`${isOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+      <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
         <div className="sidebar-header">
           <img src="{logo}" alt="no bs cookbook logo" />
-          <button className="close-btn" type='button'>
+          <button className="close-btn" type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -30,14 +27,14 @@ function Sidebar() {
           {links.map(({id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>
+                <Link to={url} onClick={closeSidebar}>
                   {text}
                 </Link>
               </li>
             )
           })}
         <li>
-          <Link to='/Private'>Private</Link>
+          <Link to='/Private' onClick={closeSidebar}>Private</Link>
         </li>
         </ul>
         <FavoriteButtons />

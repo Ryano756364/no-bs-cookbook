@@ -2,19 +2,21 @@ import styled from 'styled-components';
 import { FaUserMinus, FaUserPlus } from 'react-icons/fa';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { useRecipesContext } from '../context/recipes_context'
 
-//import { useProductsContext } from '../context/products_context'
 //import { useCartContext } from '../context/cart_context'
 //import { useUserContext } from '../context/user_context'
 
 function FavoriteButtons() {
+  const {closeSidebar} = useRecipesContext(); //uses state from useRecipesContext, don't need isSidebarOpen value
+
   return (
     <Wrapper className='favorite-btn-wrapper'>
-      <Link to='/favorites' className='cart-btn'>
+      <Link to='/favorites' className='favorites-btn' onClick={closeSidebar}>
         Favorites
-        <span className="cart-container">
+        <span className="favorites-container">
           <MdFavorite />
-          <span className="cart-value">12</span>
+          <span className="favorites-value">12</span>
         </span>
       </Link>
       <button type='button' className='auth-btn'>
@@ -30,7 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 225px;
 
-  .cart-btn {
+  .favorites-btn {
     color: var(--clr-grey-1);
     font-size: 1.5rem;
     letter-spacing: var(--spacing);
@@ -39,7 +41,7 @@ const Wrapper = styled.div`
 
     align-items: center;
   }
-  .cart-container {
+  .favorites-container {
     display: flex;
     align-items: center;
     position: relative;
@@ -48,7 +50,7 @@ const Wrapper = styled.div`
       margin-left: 5px;
     }
   }
-  .cart-value {
+  .favorites-value {
     position: absolute;
     top: -10px;
     right: -16px;
