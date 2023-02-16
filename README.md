@@ -22,7 +22,7 @@
 
 ` Reducers directory to control state objects `
 
-` `
+` Handling error and loading screens `
 
 ` `
 

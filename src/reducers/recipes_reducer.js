@@ -20,14 +20,15 @@ const recipes_reducer = (state, action) => {
     return {...state, recipes_loading:true}
   }
   if(action.type === GET_RECIPES_SUCCESS){
-    const featured_recipes = action.payload.filter(
+    /* const featured_recipes = action.payload.filter(
       (recipe) => recipe.featured === true
-    )
+    ) */
     return {
       ...state,
       recipes_loading: false,
       recipes: action.payload,
-      featured_recipes
+      featured_recipes: action.payload,
+      /* featured_recipes */
     }
   }
   if(action.type === GET_RECIPES_ERROR){

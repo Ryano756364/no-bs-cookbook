@@ -1,15 +1,38 @@
 import { useRecipesContext } from '../context/recipes_context';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-//import Error from './Error'
-//import Loading from './Loading'
-//import Product from './Product'
+import Error from './Error'
+import Loading from './Loading'
+import Recipe from './Recipe'
 
 function FeaturedRecipes() {
+  const {recipes_loading: loading, 
+    recipes_error: error, 
+    featured_recipes: featured
+  } = useRecipesContext();
+
+  if(loading){
+    return <Loading />
+  }
+
+  if(error){
+    return <Error />
+  }
+
   return (
-    <Wrapper>
-      FeaturedRecipes
+    <Wrapper className='section'>
+      <div className="title">
+        <h2>
+          Featured Recipes
+        </h2>
+        <div className="underline"></div>
+      </div>
+
+      <div className="section-center featured">
+        {featured.slice(0,3).map((recipe) => {
+          return <Recipe key={recipe.id} {...recipe}/>
+        })}
+      </div>
     </Wrapper>
   )
 }
