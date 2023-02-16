@@ -21,12 +21,9 @@ function PageBanner() {
       </article>
       
       <article className='img-container'>
-        <img src="" alt="food prep" className='main-img' />  
-        <img src="" alt="food prep" className='accent-img' />  
+        <img src="https://webknox.com/recipeImages/1747701-556x370.jpg" alt="food prep" className='main-img' />  
+        <img src="https://webknox.com/recipeImages/1747683-556x370.jpg" alt="food prep" className='accent-img' />  
       </article>
-
-      Image one <br />
-      Image two
     </Wrapper>
   )
 }

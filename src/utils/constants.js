@@ -1,3 +1,6 @@
+import {SPOONACULAR_KEY} from '../env.js';
+import {SPOONACULAR_VALUE} from '../env.js';
+
 export const links = [
   {
     id: 1,
@@ -16,29 +19,33 @@ export const links = [
   }
 ];
 
-/* export const recipes_url = '';
-
-export const single_recipe_url= ''; */
+/* export const recipes_url = `https://api.spoonacular.com/recipes/complexSearch?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}&diet=vegan`;
+ */
+/* export const single_recipe_url= 'https://api.spoonacular.com/recipes/{{BROC_QUINOA_ID}}/information'; */
 
 export const recipes_url = {
+
   "results": [
       {
           "id": 782585,
           "title": "Cannellini Bean and Asparagus Salad with Mushrooms",
-          "image": "https://spoonacular.com/recipeImages/782585-312x231.jpg",
-          "imageType": "jpg"
+          "image": "https://webknox.com/recipeImages/1747701-556x370.jpg",
+          "imageType": "jpg",
+          "featured": true
       },
       {
           "id": 716426,
           "title": "Cauliflower, Brown Rice, and Vegetable Fried Rice",
-          "image": "https://spoonacular.com/recipeImages/716426-312x231.jpg",
-          "imageType": "jpg"
+          "image": "https://webknox.com/recipeImages/1747683-556x370.jpg",
+          "imageType": "jpg",
+          "featured": true
       },
       {
           "id": 716406,
           "title": "Asparagus and Pea Soup: Real Convenience Food",
-          "image": "https://spoonacular.com/recipeImages/716406-312x231.jpg",
-          "imageType": "jpg"
+          "image": "https://webknox.com/recipeImages/1697821-556x370.jpg",
+          "imageType": "jpg",
+          "featured": true
       },
       {
           "id": 644387,

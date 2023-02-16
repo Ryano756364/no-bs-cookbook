@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useContext, useEffect, useReducer} from 'react';
 import reducer from '../reducers/recipes_reducer';
-//import { products_url as url } from '../utils/constants';
+import { recipes_url as url } from '../utils/constants';
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -29,6 +29,20 @@ export const RecipesProvider = ({ children }) => {
   const closeSidebar = () => {
     dispatch({type: SIDEBAR_CLOSE})
   }
+
+  //utilize API call with Axios
+  /* const fetchRecipes = async(url) => {
+    const response = await axios.get(url);
+    console.log(response);
+  } */
+  const fetchRecipes = (arr) => {
+    console.log(arr);
+  }
+
+  //doing this to fetch once then distribute
+  useEffect(() => {
+    fetchRecipes(url);
+  }, [])  //run just once so insert empty dependency
 
   
   //passing state ontop of the sidebar actions because there is going to be other state here as well stored

@@ -18,7 +18,7 @@
 
 ` Formspree for email submissions `
 
-` `
+` Hiding key/value from api in an environment file that git will ignore `
 
 ` `
 
