@@ -34,7 +34,7 @@ function Sidebar() {
             )
           })}
         <li>
-          <Link to='/Private' onClick={closeSidebar}>Private</Link>
+          <Link to='/Favorites' onClick={closeSidebar}>Favorites</Link>
         </li>
         </ul>
         <FavoriteButtons />

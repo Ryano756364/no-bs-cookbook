@@ -1,7 +1,19 @@
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+//import { useCartContext } from '../context/cart_context'
+
 function FavoritesPage() {
+
+  //page className is a global styling
   return (
-    <div>FavoritesPage</div>
+    <Wrapper className='page'>
+
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+
+`
 
 export default FavoritesPage
