@@ -120,7 +120,7 @@ function SingleRecipePage() {
               </div>
             </p>  
             <hr />
-            <AddToFavorites />
+            <AddToFavorites recipe={recipe}/> {/* passing in entire recipe and not grabbing object by object */}
           </section>
         </div>
       </div>
