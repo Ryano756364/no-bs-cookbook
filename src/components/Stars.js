@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
+import {IoThumbsUp} from 'react-icons/io5';
 
-function Stars() {
+function Stars({aggregateLikes}) {
+  
   return (
     <Wrapper>
-      <h4>Stars</h4>
+      <div className="stars">
+        <IoThumbsUp />
+      </div>
+      <p className='reviews'>{aggregateLikes} People Liked This Meal</p>
     </Wrapper>
   )
 }

@@ -36,7 +36,7 @@ function SingleRecipePage() {
     fetchSingleRecipe(`${url}${id}/information?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}`)
   },[id])  //as ID changes we fetch new recipe
 
-  console.log(recipe);
+  //console.log(recipe);
 
   if(loading){
     return <Loading />
@@ -59,17 +59,17 @@ function SingleRecipePage() {
         </Link>
 
         <div className="recipe-center">
-          <RecipeImages />
+          <RecipeImages image={image}/> {/* in the future set up an array to send more photos here */}
           <section className="content">
             <h2>{title}</h2>
-            <Stars />
+            <Stars aggregateLikes={aggregateLikes}/>
             <h5 className='cookTime'>{readyInMinutes} Min Prep/Cook Time</h5>
             {/* <p className="desc">{summary}</p> */}
             <p className="info">
               <span>Servings: {servings}</span>
             </p>
             <p className="info">
-              <span><Link to={sourceUrl}>See Full Recipe!</Link></span>
+              <span><a href={sourceUrl}>See Full Recipe!</a></span>
             </p>
 
             <p className="info diet-column">
@@ -119,7 +119,8 @@ function SingleRecipePage() {
                     : <FaTimes className='diet-mark'/>}
               </div>
             </p>  
-            
+            <hr />
+            <AddToFavorites />
           </section>
         </div>
       </div>

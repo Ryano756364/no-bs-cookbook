@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function RecipeImages() {
+function RecipeImages(image) {
+  const [main, setMain] = useState(image);
+
   return (
     <Wrapper>
-      <h4>RecipeImages</h4>
+      <img src={main.image} alt="main recipe" />
     </Wrapper>
   )
 }
