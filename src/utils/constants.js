@@ -21,8 +21,7 @@ export const links = [
 
 /* export const recipes_url = `https://api.spoonacular.com/recipes/complexSearch?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}&diet=vegan`;
  */
-/* export const single_recipe_url= 'https://api.spoonacular.com/recipes/{{BROC_QUINOA_ID}}/information'; */
-
+export const single_recipe_url= `https://api.spoonacular.com/recipes/`;
 
 export const recipes_url = {
 
@@ -96,7 +95,7 @@ export const recipes_url = {
   "totalResults": 689
 };
 
-export const single_recipe_url= {
+/* export const single_recipe_url= {
   "vegetarian": true,
   "vegan": true,
   "glutenFree": true,
@@ -469,4 +468,4 @@ export const single_recipe_url= {
   ],
   "originalId": null,
   "spoonacularSourceUrl": "https://spoonacular.com/broccolini-quinoa-pilaf-715769"
-};
+}; */

@@ -53,12 +53,12 @@ export const RecipesProvider = ({ children }) => {
     }
   }
 
+  //passing this down to further pull apart recipe object
   const fetchSingleRecipe = async(url) => {
     dispatch({type: GET_SINGLE_RECIPE_BEGIN});
     try {
       const response = await axios.get(url);
-      const singleRecipe = response.results;
-      console.log(singleRecipe);
+      const singleRecipe = response.data;
       dispatch({type: GET_SINGLE_RECIPE_SUCCESS, payload: singleRecipe});
     } catch (error) {
       dispatch({type:GET_SINGLE_RECIPE_ERROR})
@@ -73,7 +73,7 @@ export const RecipesProvider = ({ children }) => {
   
   //passing state ontop of the sidebar actions because there is going to be other state here as well stored
   return (
-    <RecipesContext.Provider value={{...state, openSidebar, closeSidebar}}>
+    <RecipesContext.Provider value={{...state, openSidebar, closeSidebar, fetchSingleRecipe}}>
       {children}
     </RecipesContext.Provider>
   )
