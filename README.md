@@ -16,4 +16,26 @@
 
 ` Wrapping svg, png, icons, ect with button and styling to cursor `
 
+` Formspree for email submissions `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
+` `
+
 ` `

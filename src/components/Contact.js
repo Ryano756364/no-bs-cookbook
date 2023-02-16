@@ -3,7 +3,24 @@ import styled from 'styled-components';
 function Contact() {
   return (
     <Wrapper>
-      Contact
+      <div className='section-center'>
+        <h3>Stay in touch or buy me coffee!</h3>
+        <div className='content'>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Fuga eaque inventore unde delectus id consequatur earum culpa! 
+          </p>
+          <form 
+            className='contact-form'
+            action="https://formspree.io/f/xdoveqjw"
+            method="POST"
+          >
+            <input type='email' className='form-input' placeholder='Enter email' name="email"/>
+            <button type='submit' className='submit-btn'>Enter!</button>
+          </form>
+          <button className='submit-btn'>Buy Me Coffee!</button>
+        </div>
+      </div>
     </Wrapper>
   )
 }
@@ -33,6 +50,7 @@ const Wrapper = styled.section `
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border: 2px solid var(--clr-black);
+    margin-bottom: 1rem;
   }
 
   .form-input {
