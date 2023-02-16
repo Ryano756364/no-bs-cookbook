@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 import {FaBars} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
-//Import CartButtons
+import FavoriteButtons from './FavoriteButtons';
 //Import useProductsContext
 //Import useUserContext
 
@@ -33,6 +33,8 @@ function Navbar() {
             )
           })}
         </ul>
+
+        <FavoriteButtons />
       </div>
     </NavContainer>
   )
@@ -72,7 +74,7 @@ const NavContainer = styled.nav`
   .nav-links {
     display: none;
   }
-  .cart-btn-wrapper {
+  .favorite-btn-wrapper {
     display: none;
   }
   @media (min-width: 990px) {
@@ -101,7 +103,7 @@ const NavContainer = styled.nav`
         }
       }
     }
-    .cart-btn-wrapper {
+    .favorite-btn-wrapper {
       display: grid;
     }
   }
