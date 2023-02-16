@@ -20,7 +20,7 @@
 
 ` Hiding key/value from api in an environment file that git will ignore `
 
-` `
+` Reducers directory to control state objects `
 
 ` `
 

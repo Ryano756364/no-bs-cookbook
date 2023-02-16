@@ -16,8 +16,25 @@ const recipes_reducer = (state, action) => {
   if(action.type === SIDEBAR_CLOSE){
     return {...state, isSidebarOpen:false};
   }
+  if(action.type === GET_RECIPES_BEGIN){
+    return {...state, recipes_loading:true}
+  }
+  if(action.type === GET_RECIPES_SUCCESS){
+    const featured_recipes = action.payload.filter(
+      (recipe) => recipe.featured === true
+    )
+    return {
+      ...state,
+      recipes_loading: false,
+      recipes: action.payload,
+      featured_recipes
+    }
+  }
+  if(action.type === GET_RECIPES_ERROR){
+    return {...state, recipes_loading: false, recipes_error: true}
+  }
   
-  return state
+  
   throw new Error(`No Matching "${action.type}" - action type`)  /* added for testing incase string errors popup, but actions.js should mitigate this */
 }
 

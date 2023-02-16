@@ -15,6 +15,10 @@ import {
 
 const initialState = {
   isSidebarOpen: false,
+  recipes_loading:false,
+  recipes_error:false,
+  recipes:[],
+  featured_recipes:[],
 }
 
 const RecipesContext = React.createContext()
@@ -36,7 +40,14 @@ export const RecipesProvider = ({ children }) => {
     console.log(response);
   } */
   const fetchRecipes = (arr) => {
-    console.log(arr);
+    dispatch({type:GET_RECIPES_BEGIN}) //sets up loading
+    try {
+      const response = arr;
+      const recipes = response.results;
+      dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
+    } catch (error) {
+      dispatch({type:GET_RECIPES_ERROR})
+    }
   }
 
   //doing this to fetch once then distribute

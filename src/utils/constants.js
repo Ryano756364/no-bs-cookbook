@@ -23,6 +23,7 @@ export const links = [
  */
 /* export const single_recipe_url= 'https://api.spoonacular.com/recipes/{{BROC_QUINOA_ID}}/information'; */
 
+
 export const recipes_url = {
 
   "results": [
