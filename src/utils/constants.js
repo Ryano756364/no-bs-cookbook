@@ -95,7 +95,7 @@ export const recipes_url = {
   "totalResults": 689
 };
 
-/* export const single_recipe_url= {
+export const testing_single_recipe_url= {
   "vegetarian": true,
   "vegan": true,
   "glutenFree": true,
@@ -468,4 +468,4 @@ export const recipes_url = {
   ],
   "originalId": null,
   "spoonacularSourceUrl": "https://spoonacular.com/broccolini-quinoa-pilaf-715769"
-}; */
+};

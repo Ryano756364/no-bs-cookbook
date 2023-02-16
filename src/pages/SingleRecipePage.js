@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {SPOONACULAR_KEY} from '../env.js';
 import {SPOONACULAR_VALUE} from '../env.js';
-
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import RecipeImages from '../components/RecipeImages';
@@ -14,6 +13,13 @@ import AddToFavorites from '../components/AddToFavorites';
 import Stars from '../components/Stars';
 import PageBanner from '../components/PageBanner';
 import userEvent from '@testing-library/user-event';
+import DairyFree from '../assets/dairy_free.png';
+import GlutenFree from '../assets/gluten_free.png';
+import Vegan from '../assets/vegan.png';
+import Vegetarian from '../assets/vegetarian.png';
+import {GiCheckMark} from 'react-icons/gi';
+import {FaTimes} from 'react-icons/fa';
+
 
 function SingleRecipePage() {
   //console.log(useParams()) should display object and ID
@@ -39,23 +45,96 @@ function SingleRecipePage() {
     return <Error />
   }
 
+  //pullling data from api object
+  const {title, readyInMinutes, summary, servings, 
+    aggregateLikes, id:apiId, sourceUrl, image,
+    vegetarian, vegan, glutenFree, dairyFree
+  } = recipe;
+
   return (
     <Wrapper>
-      <h4>
-        SingleRecipePage
-      </h4>
+      <div className="section section-center page">
+        <Link to='/recipes' className='btn'>
+          Back To Recipes
+        </Link>
+
+        <div className="recipe-center">
+          <RecipeImages />
+          <section className="content">
+            <h2>{title}</h2>
+            <Stars />
+            <h5 className='cookTime'>{readyInMinutes} Min Prep/Cook Time</h5>
+            {/* <p className="desc">{summary}</p> */}
+            <p className="info">
+              <span>Servings: {servings}</span>
+            </p>
+            <p className="info">
+              <span><Link to={sourceUrl}>See Full Recipe!</Link></span>
+            </p>
+
+            <p className="info diet-column">
+              <div className='diet-row'>
+                <span> Dairy Free : </span>
+                  {dairyFree ? 
+                    <div className='diet-info-container'>
+                      <img src={DairyFree} alt="Dairy Free" className='diet-icon'/> 
+                      <GiCheckMark className='diet-mark'/>
+                    </div>
+                    : <FaTimes className='diet-mark'/>}
+              </div>
+            </p>
+            
+            <p className="info diet-column">
+              <div className='diet-row'>
+                <span> Gluten Free : </span>
+                  {glutenFree ? 
+                    <div className='diet-info-container'>
+                      <img src={GlutenFree} alt="Gluten Free" className='diet-icon'/> 
+                      <GiCheckMark className='diet-mark'/>
+                    </div>
+                    : <FaTimes className='diet-mark'/>}
+              </div>
+            </p>
+
+            <p className="info diet-column">
+              <div className='diet-row'>
+                <span> Vegetarian : </span>
+                  {vegetarian ? 
+                    <div className='diet-info-container'>
+                      <img src={Vegetarian} alt="Vegetarian" className='diet-icon'/> 
+                      <GiCheckMark className='diet-mark'/>
+                    </div>
+                    : <FaTimes className='diet-mark'/>}
+              </div>
+            </p>
+
+            <p className="info diet-column">
+              <div className='diet-row'>
+                <span> Vegan : </span>
+                  {vegan ? 
+                    <div className='diet-info-container'>
+                      <img src={Vegan} alt="Vegan" className='diet-icon'/> 
+                      <GiCheckMark className='diet-mark'/>
+                    </div>
+                    : <FaTimes className='diet-mark'/>}
+              </div>
+            </p>  
+            
+          </section>
+        </div>
+      </div>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.main`
-  .product-center {
+  .recipe-center {
     display: grid;
     gap: 4rem;
     margin-top: 2rem;
   }
 
-  .price {
+  .cookTime {
     color: var(--clr-primary-5);
   }
 
@@ -75,13 +154,39 @@ const Wrapper = styled.main`
     }
   }
 
+  .diet-column{
+    display: flex;
+    flex-direction: column;
+  }
+  .diet-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .diet-info-container{
+    display: flex;
+    align-content: center;
+  }
+
+  .diet-icon{
+    width: 3rem;
+    margin: 0 3rem;
+  }
+
+  .diet-mark{
+    font-size: 2rem;
+    align-self: center;
+  }
+
   @media (min-width: 992px) {
-    .product-center {
+    .recipe-center {
       grid-template-columns: 1fr 1fr;
       align-items: center;
     }
 
-    .price {
+    .cookTime {
       font-size: 1.25rem;
     }
   }
