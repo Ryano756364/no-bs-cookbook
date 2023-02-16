@@ -34,6 +34,15 @@ const recipes_reducer = (state, action) => {
   if(action.type === GET_RECIPES_ERROR){
     return {...state, recipes_loading: false, recipes_error: true}
   }
+  if(action.type === GET_SINGLE_RECIPE_BEGIN){
+    return {...state, single_recipe_loading: true, single_recipe_error: false}
+  }
+  if(action.type === GET_SINGLE_RECIPE_SUCCESS){
+    return {...state, single_recipe_loading: false, single_recipe:action.payload}
+  }
+  if(action.type === GET_SINGLE_RECIPE_ERROR){
+    return {...state, single_recipe_loading: false, single_recipe_error: true}
+  }
   
   
   throw new Error(`No Matching "${action.type}" - action type`)  /* added for testing incase string errors popup, but actions.js should mitigate this */

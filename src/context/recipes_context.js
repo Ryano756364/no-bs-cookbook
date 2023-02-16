@@ -19,6 +19,9 @@ const initialState = {
   recipes_error:false,
   recipes:[],
   featured_recipes:[],
+  single_recipe_loading:false,
+  single_recipe_error:false,
+  single_recipe: {},
 }
 
 const RecipesContext = React.createContext()
@@ -47,6 +50,18 @@ export const RecipesProvider = ({ children }) => {
       dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
+    }
+  }
+
+  const fetchSingleRecipe = async(url) => {
+    dispatch({type: GET_SINGLE_RECIPE_BEGIN});
+    try {
+      const response = await axios.get(url);
+      const singleRecipe = response.results;
+      console.log(singleRecipe);
+      dispatch({type: GET_SINGLE_RECIPE_SUCCESS, payload: singleRecipe});
+    } catch (error) {
+      dispatch({type:GET_SINGLE_RECIPE_ERROR})
     }
   }
 
