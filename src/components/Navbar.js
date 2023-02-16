@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logo from '../assets/logo.png';
+import logo from '../assets/spoon-knife.svg';
 import {FaBars} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
@@ -60,8 +60,8 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
-      width: 175px;
-      margin-left: -15px;
+      width: 44px;
+      margin-left: -12px;
     }
   }
   .nav-toggle {
@@ -79,6 +79,7 @@ const NavContainer = styled.nav`
   .favorite-btn-wrapper {
     display: none;
   }
+
   @media (min-width: 990px) {
     .nav-toggle {
       display: none;

@@ -13,6 +13,7 @@ import RecipeImages from '../components/RecipeImages';
 import AddToFavorites from '../components/AddToFavorites';
 import Stars from '../components/Stars';
 import PageBanner from '../components/PageBanner';
+import userEvent from '@testing-library/user-event';
 
 function SingleRecipePage() {
   //console.log(useParams()) should display object and ID
@@ -30,6 +31,13 @@ function SingleRecipePage() {
   },[id])  //as ID changes we fetch new recipe
 
   console.log(recipe);
+
+  if(loading){
+    return <Loading />
+  }
+  if (error){
+    return <Error />
+  }
 
   return (
     <Wrapper>
