@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 225px;
+  width: 265px;
 
   .favorites-btn {
     color: var(--clr-grey-1);
@@ -74,6 +74,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
+    margin-left: 20px;
     svg {
       margin-left: 5px;
     }
