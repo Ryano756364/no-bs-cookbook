@@ -17,6 +17,7 @@ const initialState = {
   filtered_recipes:[],
   all_recipes:[],
   grid_view: true,
+  sort:'popularity-highest',
 }
 
 const FilterContext = React.createContext()
@@ -28,6 +29,9 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({type: LOAD_RECIPES, payload: recipes}) //when this mounts, we want to dispatch load recipes
   },[recipes])
+  useEffect(() => {
+    dispatch({type: SORT_RECIPES})
+  },[recipes, state.sort])
 
   const setGridView = () => {
     dispatch({type:SET_GRIDVIEW})
@@ -36,8 +40,16 @@ export const FilterProvider = ({ children }) => {
     dispatch({type:SET_LISTVIEW})
   }
 
+  const updateSort = (e) => {
+    //console.log(e);
+    //const name = e.target.name;
+    const value = e.target.value;
+    console.log(value);
+    dispatch({type:UPDATE_SORT, payload:value});
+  }
+
   return (
-    <FilterContext.Provider value={{...state, setGridView, setListView}}>
+    <FilterContext.Provider value={{...state, setGridView, setListView, updateSort}}>
       {children}
     </FilterContext.Provider>
   )

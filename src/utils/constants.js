@@ -20,7 +20,7 @@ export const links = [
 ];
 
 /* export const recipes_url = `https://api.spoonacular.com/recipes/complexSearch?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}&diet=vegan`;
- */
+ */ 
 export const single_recipe_url= `https://api.spoonacular.com/recipes/`;
 
 export const recipes_url = {

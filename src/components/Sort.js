@@ -4,7 +4,11 @@ import { BsFillGridFill, BsList } from 'react-icons/bs'
 
 
 function Sort() {
-  const {filtered_recipes:recipes, grid_view, setGridView, setListView} = useFilterContext();
+  const {filtered_recipes:recipes, 
+        grid_view, 
+        setGridView, 
+        setListView,
+        sort,updateSort} = useFilterContext();
 
   return (
     <Wrapper>
@@ -23,9 +27,15 @@ function Sort() {
       <hr />
       <form>
         <label htmlFor='sort'>sort by </label>
-        <select name="sort" id="sort" className="sort-input">
-          <option value="prep-time-lowest">prep time (lowest)</option>
-          <option value="prep-time-highest">prep time (highest)</option>
+        <select 
+          name="sort" 
+          id="sort" 
+          className="sort-input"
+          value={sort}
+          onChange={updateSort}
+        >
+          {/* <option value="popularity-highest">popularity (most loved)</option>
+          <option value="popularity-lowest">popularity (low on love)</option>  this feature coming soon*/}
           <option value="name-a">name (a-z)</option>
           <option value="name-z">name (z-a)</option>
         </select>

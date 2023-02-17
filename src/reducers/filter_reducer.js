@@ -25,6 +25,31 @@ const filter_reducer = (state, action) => {
     return {...state, grid_view: false}
   }
 
+  if(action.type === UPDATE_SORT) {
+    return {...state, sort: action.payload};
+  }
+  if (action.type === SORT_RECIPES) {
+    const {sort, filtered_recipes} = state;
+    let tempRecipes = [...filtered_recipes];
+    if (sort === 'popularity-highest'){
+      tempRecipes = tempRecipes.sort((a, b) => b.aggregateLikes - a.aggregateLikes)
+    }
+    if (sort === 'popularity-lowest'){
+      tempRecipes = tempRecipes.sort((a, b) => b.aggregateLikes - a.aggregateLikes)
+    }
+    if (sort === 'name-a'){
+      tempRecipes = tempRecipes.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      })
+    }
+    if (sort === 'name-z'){
+      tempRecipes = tempRecipes.sort((a, b) => {
+        return b.title.localeCompare(a.title);
+      })
+    }
+    return {...state, filtered_recipes:tempRecipes};
+  }
+
   throw new Error(`No Matching "${action.type}" - action type`); //used mainly for testing
 }
 
