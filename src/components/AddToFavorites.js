@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 //import { useCartContext } from '../context/cart_context';
-//import AmountButtons from './AmountButtons';
 
 function AddToFavorites({recipe}) {
   const {apiId, servings, image, aggregateLikes} = recipe;
@@ -11,7 +10,9 @@ function AddToFavorites({recipe}) {
   return (
     <Wrapper>
       <div className="btn-container">
-        <button className='btn'>Add To Favorites</button>
+        <Link to='/favorites' className='btn'>
+          Add To Favorites
+        </Link>
       </div>
     </Wrapper>
   )
@@ -27,11 +28,11 @@ const Wrapper = styled.section`
   .btn-container {
     margin-top: 2rem;
   }
-  
+
   .btn {
     margin-top: 1rem;
-    width: 140px;
-    text-transform: capitalize;
+    width: 250px;
+    text-transform: uppercase;
     font-weight: 400;
     font-size: 1.25rem;
   }
