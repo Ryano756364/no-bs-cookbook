@@ -16,7 +16,7 @@ import { useRecipesContext } from './recipes_context';
 const initialState = {
   filtered_recipes:[],
   all_recipes:[],
-  grid_view: true
+  grid_view: true,
 }
 
 const FilterContext = React.createContext()
@@ -29,8 +29,15 @@ export const FilterProvider = ({ children }) => {
     dispatch({type: LOAD_RECIPES, payload: recipes}) //when this mounts, we want to dispatch load recipes
   },[recipes])
 
+  const setGridView = () => {
+    dispatch({type:SET_GRIDVIEW})
+  }
+  const setListView = () => {
+    dispatch({type:SET_LISTVIEW})
+  }
+
   return (
-    <FilterContext.Provider value={{...state}}>
+    <FilterContext.Provider value={{...state, setGridView, setListView}}>
       {children}
     </FilterContext.Provider>
   )
