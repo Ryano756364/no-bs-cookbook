@@ -1,7 +1,7 @@
 import React from 'react';
 import {useFilterContext} from '../context/filter_context';
 import GridView from './GridView';
-import ListView from './ListView'
+import ListView from './ListView';
 
 function RecipeList() {
   const {filtered_recipes:recipes, grid_view} = useFilterContext(); //wanted filtered recipes, not all
@@ -13,13 +13,11 @@ function RecipeList() {
       </h5>
     )
   }
-
   if (grid_view === false) {
     return (
       <ListView recipes={recipes} />
     )
   }
-
   return (
     <GridView recipes={recipes}>
       Recipe List

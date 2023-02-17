@@ -2,16 +2,25 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 function ListView({recipes}) {
+
+  const washSummary = (summary) => {
+    let smallerString = summary.substring(0, 250);
+    smallerString = smallerString.replaceAll("</b>", '');
+    smallerString = smallerString.replaceAll("<b>", '');
+    return smallerString
+  }
+
   return (
     <Wrapper>
       {recipes.map((recipe) => {
-        const {id, image, title, summary, readyInMinutes, servings} = recipe;
+        const {id, image, title, aggregateLikes, summary } = recipe;
         return (
           <article key={id}>
             <img src={image} alt={title} />
             <div>
               <h4>{title}</h4>
-              <h5 className='cook-time'>{servings}</h5>
+              <h5 className='cook-time'>{aggregateLikes} Less Hungry People Like This </h5>
+              <p>{washSummary(summary)}...</p>
               <Link to={`/recipes/${id}`} className='btn'>
                 Recipe
               </Link>

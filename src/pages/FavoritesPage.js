@@ -6,7 +6,7 @@ function FavoritesPage() {
 
   //page className is a global styling
   return (
-    <Wrapper className='page'>
+    <Wrapper className='page-100'>
 
     </Wrapper>
   )

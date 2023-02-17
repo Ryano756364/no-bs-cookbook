@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useFilterContext } from '../context/filter_context';
-import { BsFillGridFill, BsList } from 'react-icons/bs'
+import { BsFillGridFill, BsList } from 'react-icons/bs';
 
 
 function Sort() {
@@ -34,8 +34,8 @@ function Sort() {
           value={sort}
           onChange={updateSort}
         >
-          {/* <option value="popularity-highest">popularity (most loved)</option>
-          <option value="popularity-lowest">popularity (low on love)</option>  this feature coming soon*/}
+          <option value="popularity-highest">popularity (most loved)</option>
+          <option value="popularity-lowest">popularity (low on love)</option>
           <option value="name-a">name (a-z)</option>
           <option value="name-z">name (z-a)</option>
         </select>
@@ -104,6 +104,7 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     padding: 0.25rem 0.5rem;
     background: transparent;
+    min-width: 14rem;
   }
 
   label {

@@ -17,7 +17,7 @@ const initialState = {
   filtered_recipes:[],
   all_recipes:[],
   grid_view: true,
-  sort:'name-a',  //changes default behavior of what is displayed upon page loading
+  sort:'popularity-highest',  //changes default behavior of what is displayed upon page loading
   filters:{
     text:'',
     
@@ -48,7 +48,7 @@ export const FilterProvider = ({ children }) => {
     //console.log(e);
     //const name = e.target.name;
     const value = e.target.value;
-    console.log(value);
+    //console.log(value);
     dispatch({type:UPDATE_SORT, payload:value});
   }
 

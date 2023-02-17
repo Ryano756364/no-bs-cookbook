@@ -4,7 +4,7 @@ import aboutImg from '../assets/spoon-knife.svg';
 function AboutPage() {
   // wrapper classes are in global
   return (
-    <Wrapper className='page section section-center'>
+    <Wrapper className='page-100 section section-center'>
       <img src={aboutImg} alt="about" />
       <article>
         <div className="title">

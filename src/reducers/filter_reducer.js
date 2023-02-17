@@ -35,7 +35,7 @@ const filter_reducer = (state, action) => {
       tempRecipes = tempRecipes.sort((a, b) => b.aggregateLikes - a.aggregateLikes)
     }
     if (sort === 'popularity-lowest'){
-      tempRecipes = tempRecipes.sort((a, b) => b.aggregateLikes - a.aggregateLikes)
+      tempRecipes = tempRecipes.sort((a, b) => a.aggregateLikes - b.aggregateLikes)
     }
     if (sort === 'name-a'){
       tempRecipes = tempRecipes.sort((a, b) => {
