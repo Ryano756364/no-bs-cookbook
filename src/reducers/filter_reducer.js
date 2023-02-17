@@ -4,9 +4,9 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_RECIPES,
-  UPDATE_FILTERS,
-  FILTER_RECIPES,
-  CLEAR_FILTERS,
+  //UPDATE_FILTERS,
+  //FILTER_RECIPES,
+  //CLEAR_FILTERS,
 } from '../actions';
 
 const filter_reducer = (state, action) => {
