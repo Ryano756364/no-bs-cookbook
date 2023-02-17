@@ -1,7 +1,36 @@
+import styled from 'styled-components';
+import Filters from '../components/Filters';
+import RecipeList from '../components/RecipeList';
+import Sort from '../components/Sort';
+
 function RecipesPage() {
   return (
-    <div>RecipesPage</div>
+    <main>
+      <Wrapper className='page-100'>
+        <div className="section-center recipes">
+          <Filters /> 
+          <div>
+            <Sort />
+            <RecipeList />
+          </div>
+        </div>
+      </Wrapper>
+    </main>
   )
 }
 
-export default RecipesPage
+const Wrapper = styled.div`
+  .recipes {
+    display: grid;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+
+  @media (min-width: 768px) {
+    .recipes {
+      grid-template-columns: 200px 1fr;
+    }
+  }
+`
+
+export default RecipesPage;

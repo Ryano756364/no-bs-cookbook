@@ -15,21 +15,22 @@ import { useRecipesContext } from './recipes_context';
 
 const initialState = {
   filtered_recipes:[],
-  all_recipes:[]
+  all_recipes:[],
+  grid_view: true
 }
 
 const FilterContext = React.createContext()
 
 export const FilterProvider = ({ children }) => {
   const {recipes} = useRecipesContext();  //cannot pass recipes directly into state below
-  const [state,dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({type: LOAD_RECIPES, payload: recipes})
+    dispatch({type: LOAD_RECIPES, payload: recipes}) //when this mounts, we want to dispatch load recipes
   },[recipes])
 
   return (
-    <FilterContext.Provider value='filter context'>
+    <FilterContext.Provider value={{...state}}>
       {children}
     </FilterContext.Provider>
   )

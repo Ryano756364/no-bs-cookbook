@@ -14,12 +14,11 @@ const filter_reducer = (state, action) => {
     return {
       ...state,
       all_recipes:[...action.payload],
-      filter_recipes:[...action.payload] //need to set these two up this way otherwise we will reset memory instead of copying it over with ...
+      filtered_recipes:[...action.payload] //need to set these two up this way otherwise we will reset memory instead of copying it over with ...
     }
   } 
 
-  throw new Error(`No Matching "${action.type}" - action type`); //used for testing
+  throw new Error(`No Matching "${action.type}" - action type`); //used mainly for testing
 }
 
 export default filter_reducer;
-

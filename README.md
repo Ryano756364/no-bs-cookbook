@@ -24,9 +24,9 @@
 
 ` Handling error and loading screens `
 
-` `
+` Grid layout versus list layout upon sorting `
 
-` `
+` Clicking a clear all button to restore state when user wants to see all recipes again `
 
 ` `
 
