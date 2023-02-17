@@ -11,10 +11,14 @@ import {
 
 const filter_reducer = (state, action) => {
   if(action.type === LOAD_RECIPES){
+    let maxLikes = action.payload.map((r) => r.aggregateLikes);
+    maxLikes = Math.max(...maxLikes); //spread operator needed to pass into math
+    //console.log(maxLikes);
     return {
       ...state,
       all_recipes:[...action.payload],
-      filtered_recipes:[...action.payload] //need to set these two up this way otherwise we will reset memory instead of copying it over with ...
+      filtered_recipes:[...action.payload], //need to set these two up this way otherwise we will reset memory instead of copying it over with ...
+      filters:{...state.filters, max_likes:maxLikes, likes:maxLikes}
     }
   } 
 

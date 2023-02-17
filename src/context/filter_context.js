@@ -20,7 +20,11 @@ const initialState = {
   sort:'popularity-highest',  //changes default behavior of what is displayed upon page loading
   filters:{
     text:'',
-    
+    category:'all',
+    meal_time:'all',
+    min_likes:0,
+    max_likes:0,
+    likes:0,
   }
 }
 
