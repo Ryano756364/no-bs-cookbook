@@ -7,9 +7,9 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_RECIPES,
-  UPDATE_FILTERS,
-  FILTER_RECIPES,
-  CLEAR_FILTERS,
+  //UPDATE_FILTERS,
+  //FILTER_RECIPES,
+  //CLEAR_FILTERS,
 } from '../actions'
 import { useRecipesContext } from './recipes_context';
 
@@ -17,7 +17,11 @@ const initialState = {
   filtered_recipes:[],
   all_recipes:[],
   grid_view: true,
-  sort:'popularity-highest',
+  sort:'name-a',  //changes default behavior of what is displayed upon page loading
+  filters:{
+    text:'',
+    
+  }
 }
 
 const FilterContext = React.createContext()
