@@ -14,7 +14,6 @@ function FeaturedRecipes() {
   if(loading){
     return <Loading />
   }
-
   if(error){
     return <Error />
   }
@@ -23,13 +22,13 @@ function FeaturedRecipes() {
     <Wrapper className='section'>
       <div className="title">
         <h2>
-          Featured Recipes
+          Popular Recipes
         </h2>
         <div className="underline"></div>
       </div>
 
       <div className="section-center featured">
-        {featured.slice(0,3).map((recipe) => {
+        {featured.slice(0,6).map((recipe) => {
           return <Recipe key={recipe.id} {...recipe}/>
         })}
       </div>

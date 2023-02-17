@@ -1,7 +1,13 @@
+//Please see reducing file regarding state change
+
 import axios from 'axios';
 import React, {useContext, useEffect, useReducer} from 'react';
 import reducer from '../reducers/recipes_reducer';
-import { recipes_url as url } from '../utils/constants';
+//live api
+import { updated_recipes_url as url } from '../utils/constants';
+//testing arr
+import { testing_updated_recipes_url as testing_url} from '../utils/constants';
+
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -37,21 +43,37 @@ export const RecipesProvider = ({ children }) => {
     dispatch({type: SIDEBAR_CLOSE})
   }
 
+
+
+  // LIVE CALL TO API CHANGE (1 OF 3)
   //utilize API call with Axios
   /* const fetchRecipes = async(url) => {
-    const response = await axios.get(url);
-    console.log(response);
-  } */
-  const fetchRecipes = (arr) => {
-    dispatch({type:GET_RECIPES_BEGIN}) //sets up loading
+    dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
-      const response = arr;
-      const recipes = response.results;
+      const response = await axios.get(url);
+      const recipes = response.data;
+      console.log(recipes);  //contains recipe array
+      dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
+    } catch (error) {
+      dispatch({type:GET_RECIPES_ERROR})
+    }
+  } */
+
+  // TESTING API ARR  CHANGE (2 OF 3)
+  const fetchRecipes = (testing_url) => {
+    dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
+    try {
+      const response = testing_url;
+      console.log(response)
+      const recipes = response.recipes;
+      console.log(recipes);  //contains recipe array
       dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
     }
   }
+
+
 
   //passing this down to further pull apart recipe object
   const fetchSingleRecipe = async(url) => {
@@ -65,12 +87,16 @@ export const RecipesProvider = ({ children }) => {
     }
   }
 
+
+
   //doing this to fetch once then distribute
   useEffect(() => {
-    fetchRecipes(url);
+    fetchRecipes(testing_url);  //SWAP THIS OUT WITH ONLY 'URL'  CHANGE (3 OF 3)
   }, [])  //run just once so insert empty dependency
 
   
+
+
   //passing state ontop of the sidebar actions because there is going to be other state here as well stored
   return (
     <RecipesContext.Provider value={{...state, openSidebar, closeSidebar, fetchSingleRecipe}}>

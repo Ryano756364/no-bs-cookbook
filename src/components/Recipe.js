@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import {MdOutlineMenuBook} from 'react-icons/md';
 import {Link} from 'react-router-dom';
-//import { formatPrice } from '../utils/helpers'
+import {AiFillLike} from 'react-icons/ai';
 
-function Recipe({id, title, image}) {
+function Recipe({id, title, image, aggregateLikes}) {
   return (
     <Wrapper>
       <div className="container">
@@ -14,7 +14,10 @@ function Recipe({id, title, image}) {
       </div>
       <footer>
         <h5>{title}</h5>
-        {/* maybe add Vegan logo here if vegan or other logos in <p> tag? */}
+        <p>
+          <AiFillLike /> 
+          {aggregateLikes} Likes 
+        </p>
       </footer>
     </Wrapper>
   )

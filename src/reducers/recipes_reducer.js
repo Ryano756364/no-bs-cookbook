@@ -1,3 +1,5 @@
+//this file updates the state back in the context file
+
 import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
@@ -20,15 +22,14 @@ const recipes_reducer = (state, action) => {
     return {...state, recipes_loading:true}
   }
   if(action.type === GET_RECIPES_SUCCESS){
-    /* const featured_recipes = action.payload.filter(
-      (recipe) => recipe.featured === true
-    ) */
+    const featured_recipes = action.payload.filter( 
+      (recipe) => recipe.veryPopular === true
+    )
     return {
       ...state,
       recipes_loading: false,
       recipes: action.payload,
-      featured_recipes: action.payload,
-      /* featured_recipes */
+      featured_recipes
     }
   }
   if(action.type === GET_RECIPES_ERROR){
