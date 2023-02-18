@@ -28,7 +28,7 @@
 
 ` Clicking a clear all button to restore state when user wants to see all recipes again `
 
-` `
+` Flattening an array of arrays when returned back from API `
 
 ` `
 

@@ -7,9 +7,9 @@ import {
   SET_LISTVIEW,
   UPDATE_SORT,
   SORT_RECIPES,
-  //UPDATE_FILTERS,
-  //FILTER_RECIPES,
-  //CLEAR_FILTERS,
+  UPDATE_FILTERS,
+  FILTER_RECIPES,
+  CLEAR_FILTERS,
 } from '../actions'
 import { useRecipesContext } from './recipes_context';
 
@@ -20,8 +20,8 @@ const initialState = {
   sort:'popularity-highest',  //changes default behavior of what is displayed upon page loading
   filters:{
     text:'',
-    category:'all',
-    meal_time:'all',
+    diets:'all',
+    dishTypes:'all',
     min_likes:0,
     max_likes:0,
     likes:0,
@@ -37,9 +37,11 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({type: LOAD_RECIPES, payload: recipes}) //when this mounts, we want to dispatch load recipes
   },[recipes])
+
   useEffect(() => {
-    dispatch({type: SORT_RECIPES})
-  },[recipes, state.sort])
+    dispatch({type:FILTER_RECIPES})  //makes more sense to put this prior to sort
+    dispatch({type:SORT_RECIPES})
+  },[recipes, state.sort, state.filters]) //every time value changes we run the UseEffect
 
   const setGridView = () => {
     dispatch({type:SET_GRIDVIEW})
@@ -56,8 +58,25 @@ export const FilterProvider = ({ children }) => {
     dispatch({type:UPDATE_SORT, payload:value});
   }
 
+  const updateFilters = (e) => {  //function needs called every time we change something
+    let name = e.target.name
+    let value = e.target.value
+    if (name === 'diets') {
+      value = e.target.textContent  //using vanilla JS
+    }
+    if (name === 'likes') {
+      value = Number(value) //need this JS because sliding bar adjusts number to String
+    } 
+    //console.log(name, value);
+    dispatch({ type: UPDATE_FILTERS, payload: { name, value } })
+  }
+
+  const clearFilters = () => {
+    dispatch({type: CLEAR_FILTERS})
+  }
+
   return (
-    <FilterContext.Provider value={{...state, setGridView, setListView, updateSort}}>
+    <FilterContext.Provider value={{...state, setGridView, setListView, updateSort, updateFilters, clearFilters}}>
       {children}
     </FilterContext.Provider>
   )

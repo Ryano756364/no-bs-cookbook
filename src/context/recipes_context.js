@@ -64,9 +64,9 @@ export const RecipesProvider = ({ children }) => {
     dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
       const response = testing_url;
-      console.log(response)
+      //console.log(response)
       const recipes = response.recipes;
-      console.log(recipes);  //contains recipe array
+      //console.log(recipes);  //contains recipe array
       dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
