@@ -4,7 +4,7 @@ import { useFavoriteContext } from '../context/favorite_context';
 
 function FavoriteItem({ id, image, title, servings, aggregateLikes }) {
 
-  const { removeItem } = useFavoriteContext()
+  const { removeFavorite } = useFavoriteContext()
   
   return (
     <Wrapper>
@@ -22,7 +22,7 @@ function FavoriteItem({ id, image, title, servings, aggregateLikes }) {
       <h5 className='servings'>{servings}</h5>
       <h5 className='likes'>{aggregateLikes}</h5>
 
-      <button type='button' className='remove-btn' onClick={() => removeItem(id)}>
+      <button type='button' className='remove-btn' onClick={() => removeFavorite(id)}>
         <FaTrash />
       </button>
     </Wrapper>

@@ -24,6 +24,12 @@ function favorite_reducer(state, action) {
       return {...state, favorite:[...state.favorite,newItem]}
     }
   }
+
+  if(action.type === REMOVE_FAVORITES_ITEM){
+    //if item matches, remove from favorites, otherwise, move along
+    const tempFavorite = state.favorite.filter((favotite) => favotite.id !== action.payload);
+    return {...state, favorite:tempFavorite};
+  }
   return state
   throw new Error(`No Matching "${action.type}" - action type`); 
 }
