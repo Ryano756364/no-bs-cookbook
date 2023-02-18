@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { useFavoriteContext } from '../context/favorite_context';
+//import { Link } from 'react-router-dom';
+//import { useFavoriteContext } from '../context/favorite_context';
 
 function FavoriteTotals() {
-  const { total_amount, restaurant_amount } = useFavoriteContext()
+  //const { total_amount, restaurant_amount } = useFavoriteContext()
 
   return (
     <Wrapper>
