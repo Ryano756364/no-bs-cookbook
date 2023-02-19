@@ -35,7 +35,7 @@ function favorite_reducer(state, action) {
     return {...state, favorite: []};
   }
 
-  if(action.type == COUNT_FAVORITES_TOTALS){
+  if(action.type === COUNT_FAVORITES_TOTALS){
     const {total_items} = state.favorite.reduce((total) => {
       total.total_items += 1;
       return total;
