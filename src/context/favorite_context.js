@@ -44,6 +44,7 @@ export const FavoriteProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    dispatch({type: COUNT_FAVORITES_TOTALS})
     localStorage.setItem('favorite', JSON.stringify(state.favorite)) //can only use strings to store
     dispatch({ type: COUNT_FAVORITES_TOTALS })
   }, [state.favorite])

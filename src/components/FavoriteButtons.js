@@ -3,12 +3,12 @@ import { FaUserMinus, FaUserPlus } from 'react-icons/fa';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useRecipesContext } from '../context/recipes_context'
-
-//import { useCartContext } from '../context/cart_context'
+import { useFavoriteContext } from '../context/favorite_context'
 //import { useUserContext } from '../context/user_context'
 
 function FavoriteButtons() {
   const {closeSidebar} = useRecipesContext(); //uses state from useRecipesContext, don't need isSidebarOpen value
+  const {total_items} = useFavoriteContext();
 
   return (
     <Wrapper className='favorite-btn-wrapper'>
@@ -16,7 +16,7 @@ function FavoriteButtons() {
         Favorites
         <span className="favorites-container">
           <MdFavorite />
-          <span className="favorites-value">12</span>
+          <span className="favorites-value">{total_items}</span>
         </span>
       </Link>
       <button type='button' className='auth-btn'>

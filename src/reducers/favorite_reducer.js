@@ -30,6 +30,20 @@ function favorite_reducer(state, action) {
     const tempFavorite = state.favorite.filter((favotite) => favotite.id !== action.payload);
     return {...state, favorite:tempFavorite};
   }
+
+  if(action.type === CLEAR_FAVORITES){
+    return {...state, favorite: []};
+  }
+
+  if(action.type == COUNT_FAVORITES_TOTALS){
+    const {total_items} = state.favorite.reduce((total) => {
+      total.total_items += 1;
+      return total;
+    },{total_items:0})
+
+    return {...state, total_items}
+  }
+
   return state
   throw new Error(`No Matching "${action.type}" - action type`); 
 }
