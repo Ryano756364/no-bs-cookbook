@@ -5,6 +5,7 @@ import './index.css';
 import {RecipesProvider} from './context/recipes_context';
 import {FilterProvider} from './context/filter_context';
 import {FavoriteProvider} from './context/favorite_context';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 const root = ReactDom.createRoot(document.getElementById('root'));
 
