@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 function FavoriteTotals() {
   //const { total_amount, restaurant_amount } = useFavoriteContext()
+  //const {myUser, loginWithRedirect} = useUserContext();
 
   return (
     <Wrapper>

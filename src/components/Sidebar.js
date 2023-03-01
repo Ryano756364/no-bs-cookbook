@@ -5,12 +5,13 @@ import {links} from '../utils/constants';
 import {FaTimes} from 'react-icons/fa';
 import FavoriteButtons from './FavoriteButtons';
 import { useRecipesContext } from '../context/recipes_context';
+import { useUserContext } from '../context/user_context';
 
 //import { useProductsContext } from '../context/products_context';
-//import { useUserContext } from '../context/user_context';
 
 function Sidebar() {
   const {isSidebarOpen, closeSidebar} = useRecipesContext(); //From the state
+  const {myUser} = useUserContext();
 
   //setting up clicking with sidebar
   return (
@@ -33,9 +34,11 @@ function Sidebar() {
               </li>
             )
           })}
-        <li>
-          <Link to='/Favorites' onClick={closeSidebar}>Favorites</Link>
-        </li>
+        {myUser && (
+          <li>
+            <Link to='/Favorites' onClick={closeSidebar}>Favorites</Link>
+          </li>
+        )}
         </ul>
         <FavoriteButtons />
       </aside>

@@ -5,10 +5,11 @@ import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
 import FavoriteButtons from './FavoriteButtons';
 import { useRecipesContext } from '../context/recipes_context';
-//Import useUserContext
+import { useUserContext } from '../context/user_context';
 
 function Navbar() {
   const {openSidebar} = useRecipesContext(); //need to invoke here
+  const {myUser} = useUserContext();
 
   return (
     <NavContainer>
@@ -34,6 +35,11 @@ function Navbar() {
               </li>
             )
           })}
+          {
+            myUser && <li>
+              <Link to="/favorite">Favorites</Link>
+            </li>
+          }
         </ul>
 
         <FavoriteButtons />
