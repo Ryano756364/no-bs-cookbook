@@ -19,9 +19,9 @@ import Vegan from '../assets/vegan.png';
 import Vegetarian from '../assets/vegetarian.png';
 import {GiCheckMark} from 'react-icons/gi';
 import {FaTimes} from 'react-icons/fa';
-require('dotenv').config()
-const SPOONACULAR_KEY = require(process.env.SPOONACULAR_KEY);
-const SPOONACULAR_VALUE = require(process.env.SPOONACULAR_VALUE);
+//require('dotenv').config()
+//const SPOONACULAR_KEY = require(process.env.SPOONACULAR_KEY);
+//const SPOONACULAR_VALUE = require(process.env.SPOONACULAR_VALUE);
 
 function SingleRecipePage() {
   //console.log(useParams()) should display object and ID
@@ -35,7 +35,7 @@ function SingleRecipePage() {
   } = useRecipesContext();
 
   useEffect(() => {
-    fetchSingleRecipe(`${url}${id}/information?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}`)
+    fetchSingleRecipe(`${url}${id}/information?apiKey=d723ce4224b14fa1935e710fdaa5cdcf`)
   },[id])  //as ID changes we fetch new recipe
 
   //console.log(recipe);

@@ -46,6 +46,7 @@ export const RecipesProvider = ({ children }) => {
 
   // LIVE CALL TO API CHANGE (1 OF 3)
   //utilize API call with Axios
+  /*
   const fetchRecipes = async(url) => {
     dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
@@ -58,10 +59,11 @@ export const RecipesProvider = ({ children }) => {
       dispatch({type:GET_RECIPES_ERROR})
     }
   }
+  */
   
 
   // TESTING API ARR  CHANGE (2 OF 3)
-  /*const fetchRecipes = (testing_url) => {
+  const fetchRecipes = (testing_url) => {
     dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
       const response = testing_url;
@@ -72,7 +74,7 @@ export const RecipesProvider = ({ children }) => {
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
     }
-  }*/
+  }
   
 
   //passing this down to further pull apart recipe object
@@ -91,7 +93,7 @@ export const RecipesProvider = ({ children }) => {
 
   //doing this to fetch once then distribute
   useEffect(() => {
-    fetchRecipes(url);  //SWAP THIS OUT WITH ONLY 'url'  CHANGE (3 OF 3)
+    fetchRecipes(testing_url);  //SWAP THIS OUT WITH ONLY 'url'  CHANGE (3 OF 3)
   }, [])  //run just once so insert empty dependency
 
   
