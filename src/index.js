@@ -6,9 +6,12 @@ import {RecipesProvider} from './context/recipes_context';
 import {FilterProvider} from './context/filter_context';
 import {FavoriteProvider} from './context/favorite_context';
 import {Auth0Provider} from '@auth0/auth0-react';
-import {DOMAIN} from './env';
-import {CLIENT_ID} from './env';
+//import {DOMAIN} from './env';
+//import {CLIENT_ID} from './env';
 import { UserProvider } from './context/user_context';
+require('dotenv').config();
+const DOMAIN = require(process.env.DOMAIN);
+const CLIENT_ID = require(process.env.CLIENT_ID);
 
 const root = ReactDom.createRoot(document.getElementById('root'));
 

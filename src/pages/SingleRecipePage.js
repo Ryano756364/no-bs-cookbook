@@ -4,8 +4,8 @@ import { useRecipesContext } from '../context/recipes_context';
 import { single_recipe_url as url } from '../utils/constants';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {SPOONACULAR_KEY} from '../env.js';
-import {SPOONACULAR_VALUE} from '../env.js';
+//import {SPOONACULAR_KEY} from '../env.js';
+//import {SPOONACULAR_VALUE} from '../env.js';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import RecipeImages from '../components/RecipeImages';
@@ -19,7 +19,9 @@ import Vegan from '../assets/vegan.png';
 import Vegetarian from '../assets/vegetarian.png';
 import {GiCheckMark} from 'react-icons/gi';
 import {FaTimes} from 'react-icons/fa';
-
+require('dotenv').config()
+const SPOONACULAR_KEY = require(process.env.SPOONACULAR_KEY);
+const SPOONACULAR_VALUE = require(process.env.SPOONACULAR_VALUE);
 
 function SingleRecipePage() {
   //console.log(useParams()) should display object and ID

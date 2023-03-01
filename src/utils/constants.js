@@ -1,6 +1,8 @@
-import {SPOONACULAR_KEY} from '../env.js';
-import {SPOONACULAR_VALUE} from '../env.js';
-
+//import {SPOONACULAR_KEY} from '../env.js';
+//import {SPOONACULAR_VALUE} from '../env.js';
+require('dotenv').config()
+const SPOONACULAR_KEY = require(process.env.SPOONACULAR_KEY);
+const SPOONACULAR_VALUE = require(process.env.SPOONACULAR_VALUE);
 
 export const links = [
   {
