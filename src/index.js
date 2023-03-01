@@ -8,6 +8,7 @@ import {FavoriteProvider} from './context/favorite_context';
 import {Auth0Provider} from '@auth0/auth0-react';
 import {DOMAIN} from './env';
 import {CLIENT_ID} from './env';
+import { UserProvider } from './context/user_context';
 
 const root = ReactDom.createRoot(document.getElementById('root'));
 
@@ -16,13 +17,16 @@ root.render(
     domain={DOMAIN}
     clientId={CLIENT_ID}
     redirectUri={window.location.origin}
+    cacheLocation='localstorage'
     >
-    <RecipesProvider>
-      <FilterProvider>  {/* very important for this to be inside of recipes provider */}
-        <FavoriteProvider>
-          <App />
-        </FavoriteProvider>
-      </FilterProvider>
-    </RecipesProvider>
+    <UserProvider>
+      <RecipesProvider>
+        <FilterProvider>  {/* very important for this to be inside of recipes provider */}
+          <FavoriteProvider>
+            <App />
+          </FavoriteProvider>
+        </FilterProvider>
+      </RecipesProvider>
+    </UserProvider>
   </Auth0Provider>
 );

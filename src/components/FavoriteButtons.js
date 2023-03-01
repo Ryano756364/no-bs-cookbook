@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { FaUserMinus, FaUserPlus } from 'react-icons/fa';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { useRecipesContext } from '../context/recipes_context'
-import { useFavoriteContext } from '../context/favorite_context'
-//import { useUserContext } from '../context/user_context'
+import { useRecipesContext } from '../context/recipes_context';
+import { useFavoriteContext } from '../context/favorite_context';
+import { useUserContext } from '../context/user_context';
 
 function FavoriteButtons() {
   const {closeSidebar} = useRecipesContext(); //uses state from useRecipesContext, don't need isSidebarOpen value
   const {total_items} = useFavoriteContext();
+  const {loginWithRedirect, myUser, logout} = useUserContext();
 
   return (
     <Wrapper className='favorite-btn-wrapper'>
@@ -19,8 +20,12 @@ function FavoriteButtons() {
           <span className="favorites-value">{total_items}</span>
         </span>
       </Link>
-      <button type='button' className='auth-btn'>
+      <button type='button' className='auth-btn' onClick={loginWithRedirect}>
         Login <FaUserPlus />
+      </button>
+      <button type="button" className='auth-btn' onClick={() => 
+        logout({returnTo:window.location.origin})}>
+        Logout <FaUserMinus />
       </button>
     </Wrapper>
   )
