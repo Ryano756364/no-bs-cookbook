@@ -47,33 +47,34 @@ export const RecipesProvider = ({ children }) => {
 
   // LIVE CALL TO API CHANGE (1 OF 3)
   //utilize API call with Axios
-  /* const fetchRecipes = async(url) => {
+  const fetchRecipes = async(url) => {
     dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
       const response = await axios.get(url);
       const recipes = response.data;
-      console.log(recipes);  //contains recipe array
-      dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
+      const arr = recipes.recipes;
+      //console.log(arr);  //contains recipe array
+      dispatch({type:GET_RECIPES_SUCCESS, payload: arr})
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
     }
-  } */
+  }
+  
 
   // TESTING API ARR  CHANGE (2 OF 3)
-  const fetchRecipes = (testing_url) => {
+  /*const fetchRecipes = (testing_url) => {
     dispatch({type:GET_RECIPES_BEGIN}) //sets up loading spinner
     try {
       const response = testing_url;
       //console.log(response)
       const recipes = response.recipes;
-      //console.log(recipes);  //contains recipe array
+      console.log(recipes);  //contains recipe array
       dispatch({type:GET_RECIPES_SUCCESS, payload: recipes})
     } catch (error) {
       dispatch({type:GET_RECIPES_ERROR})
     }
-  }
-
-
+  }*/
+  
 
   //passing this down to further pull apart recipe object
   const fetchSingleRecipe = async(url) => {
@@ -91,7 +92,7 @@ export const RecipesProvider = ({ children }) => {
 
   //doing this to fetch once then distribute
   useEffect(() => {
-    fetchRecipes(testing_url);  //SWAP THIS OUT WITH ONLY 'URL'  CHANGE (3 OF 3)
+    fetchRecipes(url);  //SWAP THIS OUT WITH ONLY 'url'  CHANGE (3 OF 3)
   }, [])  //run just once so insert empty dependency
 
   

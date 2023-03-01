@@ -470,8 +470,8 @@ export const testing_single_recipe_url= {
   "spoonacularSourceUrl": "https://spoonacular.com/broccolini-quinoa-pilaf-715769"
 };
 
-//Remember to update this to 30 prior to deployment
-export const updated_recipes_url = `https://api.spoonacular.com/recipes/random?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}&number=3`;
+//Remember to update this to 50 prior to deployment
+export const updated_recipes_url = `https://api.spoonacular.com/recipes/random?${SPOONACULAR_KEY}=${SPOONACULAR_VALUE}&number=50`;
 
 export const testing_updated_recipes_url = {
     "recipes": [

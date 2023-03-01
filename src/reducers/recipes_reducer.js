@@ -18,6 +18,7 @@ const recipes_reducer = (state, action) => {
   if(action.type === SIDEBAR_CLOSE){
     return {...state, isSidebarOpen:false};
   }
+  
   if(action.type === GET_RECIPES_BEGIN){
     return {...state, recipes_loading:true}
   }
@@ -35,6 +36,7 @@ const recipes_reducer = (state, action) => {
   if(action.type === GET_RECIPES_ERROR){
     return {...state, recipes_loading: false, recipes_error: true}
   }
+
   if(action.type === GET_SINGLE_RECIPE_BEGIN){
     return {...state, single_recipe_loading: true, single_recipe_error: false}
   }
