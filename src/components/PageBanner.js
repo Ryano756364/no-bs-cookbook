@@ -10,10 +10,7 @@ function PageBanner() {
         <h1>Restore your health <br />
         through food</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Esse dolor illum alias reprehenderit explicabo nulla unde! 
-        Fugit hic labore nobis ducimus accusamus explicabo tempora repellendus in laborum. 
-        Modi, tempore corporis!
+        My companies website was created to allow the average person to quickly head to this site, find great food, save them, all without the hassle of being bombarded by hundreds of advertisemts along the way!
       </p>
       <Link to='/recipes' className='btn hero-btn'>
         Search now

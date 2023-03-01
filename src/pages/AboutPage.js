@@ -8,10 +8,10 @@ function AboutPage() {
       <img src={aboutImg} alt="about" />
       <article>
         <div className="title">
-          <h2>Type About Title</h2>
+          <h2>About No BS Cookbook</h2>
           <div className="underline"></div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis harum sint ipsa non voluptatibus dicta facere repudiandae enim maiores ullam architecto sed, totam, similique id esse! Beatae praesentium nihil non.</p>
+        <p>To watch YOU, the client, live and fulfill a healthier you through eating great food at home. </p>
       </article>
     </Wrapper>
   )
@@ -26,7 +26,6 @@ const Wrapper = styled.section`
     display: block;
     border-radius: var(--radius);
     height: 500px;
-    object-fit: cover;
   }
 
   p {

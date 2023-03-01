@@ -9,21 +9,21 @@ function Services() {
       icon: <FcStatistics />,
       title: 'mission',
       text:
-        'Type the mission of the site here. How I turned my health around through food and have never felt better.',
+        'To provide quick, easy access to affordable recipes to make at home without being spammed on our site with hundreds of advertisements.',
     },
     {
       id: 2,
       icon: <FcLike />,
       title: 'vision',
       text:
-        'Type the vision of the site here. To watch people become healthier.',
+        'To watch you as the client use this site for free to save money and live healthier.',
     },
     {
       id: 3,
       icon: <FcGlobe />,
       title: 'history',
       text:
-        'Type the history of the site here. I am a developer who is also conscious of their health.',
+        'Inspired by my own story of finding greath health through cooking at home as a full time software developer. ',
     },
   ]
 
@@ -33,9 +33,7 @@ function Services() {
         <article className="header">
           <h3>Recipe search<br />
           built for ease</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Suscipit quis debitis aperiam eveniet atque harum sunt voluptatum 
-          inventore ratione incidunt.</p>
+          <p>Plase take the time to explore recipes on this site to not only eat healthier, but also save money at the same time.</p>
         </article>
         <div className="services-center">
           {services.map((services) => {

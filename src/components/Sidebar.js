@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+import logo from '../assets/spoon-knife.svg';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
@@ -18,7 +18,7 @@ function Sidebar() {
     <SidebarContainer>
       <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
         <div className="sidebar-header">
-          <img src="{logo}" alt="no bs cookbook logo" />
+          <img src={logo} alt="no bs cookbook logo" />
           <button className="close-btn" type='button' onClick={closeSidebar}>
             <FaTimes />
           </button>

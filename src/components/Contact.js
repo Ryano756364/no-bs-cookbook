@@ -7,8 +7,7 @@ function Contact() {
         <h3>Stay in touch or buy me coffee!</h3>
         <div className='content'>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            Fuga eaque inventore unde delectus id consequatur earum culpa! 
+            Feel free to send me a quick message on any recipe ideas to add, inquires about developing your brands own page, or leave a small amount in my account below to buy me coffee!
           </p>
           <form 
             className='contact-form'
