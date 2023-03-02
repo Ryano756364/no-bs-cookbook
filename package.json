@@ -2,6 +2,7 @@
   "name": "no-bs-cookbook",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/Ryano756364/no-bs-cookbook.git",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -19,6 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -44,6 +47,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^2.0.7",
+    "gh-pages": "^5.0.0",
     "netlify-cli": "^13.0.0"
   }
 }
