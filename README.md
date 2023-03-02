@@ -1,11 +1,12 @@
-# No BS Cookbook  - live site can be found here --> http://nobscookbook.com/
+# No BS Cookbook
 
 ---
+## Live site can be found here --> nobscookbook.com
 
+---
 ## Built With React + Axios + Syled Components
 
 ---
-
 ### Showcases Understanding Of:
 
 ` Styled Components library `
