@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Ryano756364/no-bs-cookbook.git/static/css/main.a5ba405a.css",
-    "main.js": "/Ryano756364/no-bs-cookbook.git/static/js/main.b84a8f99.js",
-    "static/media/dairy_free.png": "/Ryano756364/no-bs-cookbook.git/static/media/dairy_free.970565878d87c5c0ae17.png",
-    "static/media/vegetarian.png": "/Ryano756364/no-bs-cookbook.git/static/media/vegetarian.ab250de471f79e503284.png",
-    "static/media/gluten_free.png": "/Ryano756364/no-bs-cookbook.git/static/media/gluten_free.27bdd79fdab65af7dd85.png",
-    "static/media/vegan.png": "/Ryano756364/no-bs-cookbook.git/static/media/vegan.0455ff5754f4cc596a63.png",
-    "index.html": "/Ryano756364/no-bs-cookbook.git/index.html",
-    "static/media/spoon-knife.svg": "/Ryano756364/no-bs-cookbook.git/static/media/spoon-knife.e1fed2363b6f99ba0f1838365ccdfc73.svg",
-    "main.a5ba405a.css.map": "/Ryano756364/no-bs-cookbook.git/static/css/main.a5ba405a.css.map",
-    "main.b84a8f99.js.map": "/Ryano756364/no-bs-cookbook.git/static/js/main.b84a8f99.js.map"
+    "main.css": "/no-bs-cookbook.git/static/css/main.a5ba405a.css",
+    "main.js": "/no-bs-cookbook.git/static/js/main.65cec212.js",
+    "static/media/dairy_free.png": "/no-bs-cookbook.git/static/media/dairy_free.970565878d87c5c0ae17.png",
+    "static/media/vegetarian.png": "/no-bs-cookbook.git/static/media/vegetarian.ab250de471f79e503284.png",
+    "static/media/gluten_free.png": "/no-bs-cookbook.git/static/media/gluten_free.27bdd79fdab65af7dd85.png",
+    "static/media/vegan.png": "/no-bs-cookbook.git/static/media/vegan.0455ff5754f4cc596a63.png",
+    "index.html": "/no-bs-cookbook.git/index.html",
+    "static/media/spoon-knife.svg": "/no-bs-cookbook.git/static/media/spoon-knife.e1fed2363b6f99ba0f1838365ccdfc73.svg",
+    "main.a5ba405a.css.map": "/no-bs-cookbook.git/static/css/main.a5ba405a.css.map",
+    "main.65cec212.js.map": "/no-bs-cookbook.git/static/js/main.65cec212.js.map"
   },
   "entrypoints": [
     "static/css/main.a5ba405a.css",
-    "static/js/main.b84a8f99.js"
+    "static/js/main.65cec212.js"
   ]
 }
