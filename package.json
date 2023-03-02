@@ -1,7 +1,7 @@
 {
   "name": "no-bs-cookbook",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://ryano756364.github.io/",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
