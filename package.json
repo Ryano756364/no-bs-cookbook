@@ -2,7 +2,7 @@
   "name": "no-bs-cookbook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ryano756354.github.io/",
+  "homepage": "http://ryano756354.github.io/no-bs-cookbook",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.5",
