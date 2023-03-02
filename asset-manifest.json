@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/no-bs-cookbook/static/css/main.a5ba405a.css",
-    "main.js": "/no-bs-cookbook/static/js/main.ae0efa69.js",
-    "static/media/dairy_free.png": "/no-bs-cookbook/static/media/dairy_free.970565878d87c5c0ae17.png",
-    "static/media/vegetarian.png": "/no-bs-cookbook/static/media/vegetarian.ab250de471f79e503284.png",
-    "static/media/gluten_free.png": "/no-bs-cookbook/static/media/gluten_free.27bdd79fdab65af7dd85.png",
-    "static/media/vegan.png": "/no-bs-cookbook/static/media/vegan.0455ff5754f4cc596a63.png",
-    "index.html": "/no-bs-cookbook/index.html",
-    "static/media/spoon-knife.svg": "/no-bs-cookbook/static/media/spoon-knife.e1fed2363b6f99ba0f1838365ccdfc73.svg",
-    "main.a5ba405a.css.map": "/no-bs-cookbook/static/css/main.a5ba405a.css.map",
-    "main.ae0efa69.js.map": "/no-bs-cookbook/static/js/main.ae0efa69.js.map"
+    "main.css": "/static/css/main.a5ba405a.css",
+    "main.js": "/static/js/main.d1ef1a5a.js",
+    "static/media/dairy_free.png": "/static/media/dairy_free.970565878d87c5c0ae17.png",
+    "static/media/vegetarian.png": "/static/media/vegetarian.ab250de471f79e503284.png",
+    "static/media/gluten_free.png": "/static/media/gluten_free.27bdd79fdab65af7dd85.png",
+    "static/media/vegan.png": "/static/media/vegan.0455ff5754f4cc596a63.png",
+    "index.html": "/index.html",
+    "static/media/spoon-knife.svg": "/static/media/spoon-knife.e1fed2363b6f99ba0f1838365ccdfc73.svg",
+    "main.a5ba405a.css.map": "/static/css/main.a5ba405a.css.map",
+    "main.d1ef1a5a.js.map": "/static/js/main.d1ef1a5a.js.map"
   },
   "entrypoints": [
     "static/css/main.a5ba405a.css",
-    "static/js/main.ae0efa69.js"
+    "static/js/main.d1ef1a5a.js"
   ]
 }
